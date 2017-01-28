@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "npm run lint && polymer test",
-    "build": "gulp build"
+    "functest": "gulp functest",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "del": "^2.2.0",
@@ -16,6 +18,10 @@
     "gulp": "gulpjs/gulp#4.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^3.1.0",
+    "expect": "^1.20.2",
+    "gulp-filter": "^5.0.0",
+    "gulp-intercept": "^0.1.0",
+    "gulp-mocha": "^3.0.1",
     "merge-stream": "^1.0.0",
     "polymer-build": "^0.6.0"
   },

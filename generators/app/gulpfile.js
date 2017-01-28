@@ -93,3 +93,21 @@ function build() {
 }
 
 gulp.task('build', build);
+
+// Polymer 1 element function testing
+const mocha = require('gulp-mocha');
+
+function functest() {
+  return new Promise((resolve, reject) => {
+    let teststream = gulp.src(['functest/*.js'], { read: false })
+    .pipe(mocha({ reporter: 'list' }))
+    .on('end', resolve)
+    .on('error', resolve); // we don't want to jump out of 'watch'
+  });
+}
+
+gulp.task('functest', functest);
+
+gulp.task('watch', () => {
+  gulp.watch(['src/**/*.html', 'functest/*.js'], functest);
+});

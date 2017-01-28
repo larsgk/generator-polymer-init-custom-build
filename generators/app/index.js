@@ -40,6 +40,17 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('gulpfile.js')
     );
 
+    // Copy function test example files
+    this.fs.copy(
+      this.templatePath('my-view1.js'),
+      this.destinationPath('functest/my-view1.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('my-view1.html'),
+      this.destinationPath('src/my-view1.js')
+    );
+
     // Overwrite the PSK files with new files
     this.fs.copy(
       this.templatePath('{package.json,README.md}'),
